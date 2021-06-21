@@ -1,0 +1,123 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 525c9813223d4c71dcbf67e3e2d59bed08f01882d82f3a89ef5577eb2e8f9e21
+
+name:           tinbox
+version:        0.1.0.0
+category:       web
+homepage:       https://gitlab.com/tsaron/tinbox#readme
+author:         Arewa Olakunle
+maintainer:     arewa.olakunle@gmail.com
+copyright:      Arewa Olakunle
+license:        AllRightsReserved
+build-type:     Simple
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      Routes
+  other-modules:
+      Opaleye.X
+      Opaleye.X.TH
+      X.Prelude
+      Paths_tinbox
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Widentities -Wpartial-fields -Wredundant-constraints -fhide-source-paths
+  build-depends:
+      base >=4.7 && <5
+    , blaze-html
+    , blaze-markup
+    , cookie
+    , digestive-functors
+    , digestive-functors-scotty
+    , exceptions
+    , hedis
+    , opaleye
+    , postgresql-simple
+    , product-profunctors
+    , profunctors
+    , scotty
+    , scotty-cookie
+    , split
+    , template-haskell
+    , text
+    , wai
+    , wai-extra
+    , warp
+  default-language: Haskell2010
+
+executable tinbox
+  main-is: Main.hs
+  other-modules:
+      Paths_tinbox
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Widentities -Wpartial-fields -Wredundant-constraints -fhide-source-paths -threaded -O2 -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , blaze-html
+    , blaze-markup
+    , cookie
+    , digestive-functors
+    , digestive-functors-scotty
+    , exceptions
+    , hedis
+    , opaleye
+    , postgresql-simple
+    , product-profunctors
+    , profunctors
+    , scotty
+    , scotty-cookie
+    , split
+    , template-haskell
+    , text
+    , tinbox
+    , wai
+    , wai-extra
+    , warp
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Opaleye.X
+      Opaleye.X.TH
+      Routes
+      X.Prelude
+      Paths_tinbox
+  hs-source-dirs:
+      test
+      src
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Widentities -Wpartial-fields -Wredundant-constraints -fhide-source-paths -threaded -O2 -rtsopts -with-rtsopts=-N
+  build-depends:
+      base
+    , blaze-html
+    , blaze-markup
+    , cookie
+    , digestive-functors
+    , digestive-functors-scotty
+    , exceptions
+    , hedis
+    , hspec
+    , hspec-wai
+    , opaleye
+    , postgresql-simple
+    , product-profunctors
+    , profunctors
+    , scotty
+    , scotty-cookie
+    , split
+    , template-haskell
+    , text
+    , tinbox
+    , wai
+    , wai-extra
+    , warp
+  default-language: Haskell2010
